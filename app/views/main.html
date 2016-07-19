@@ -1,0 +1,106 @@
+<div class="jumbotron">
+  <h2>'Push Message Admin Panel!</h2>
+  <p class="lead">
+    <img src="images/push.png" alt="I'm Yeoman"><br>
+    Panel to manage Push notifications in differents apps.
+  </p>
+</div>
+
+<div class="row marketing">
+    <div class="panel panel-default">
+        <div class="panel-heading"><i class="fa fa-cogs fa-fw"></i> Push Message options
+            <span class="label label-danger pull-right"> <i class="fa fa-database fa-fw"></i> Message manage Administration</span></div>
+        <div class="panel-body">
+            <div class="col-xs 12 col-sm-5 col-md-5">
+                <span class="label label-danger"><i class="fa fa-truck fa-fw"></i> Type options</span>
+                <p></p>
+              
+                <div class="form-group">
+                    <label for="form-control" id="BPBABAN_LABEL"> Select Option (suscription)</label>
+                    
+
+                    <select name="mySelect" id="mySelect" class="form-control"
+                      ng-options="option.name for option in data.availableOptions track by option.id"
+                      ng-model="data.type">
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="form-control" id="BPBAMN_LABEL">Maker</label>
+                    <select class="form-control" id="BPBAMN_SELECT">
+                        <option>Bosch</option>
+                        <option>Mercedes</option>
+                        <option>BMW</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label> Description</label>
+                    <textarea class="form-control" id="BPBAHW_TEXTAREA" rows="3">Place some awesome text here</textarea>
+                </div>
+                <label>
+       User name:
+       <input type="text" name="userName" ng-model="user.name" required>
+    </label>
+    <div role="alert">
+      <span class="error" ng-show="myForm.userName.$error.required">
+       Required!</span>
+    </div>
+    <label>
+       Last name:
+       <input type="text" name="lastName" ng-model="user.last"
+       ng-minlength="3" ng-maxlength="10">
+    </label>
+    <div role="alert">
+      <span class="error" ng-show="myForm.lastName.$error.minlength">
+        Too short!</span>
+      <span class="error" ng-show="myForm.lastName.$error.maxlength">
+        Too long!</span>
+    </div>
+            </div>
+            <!--/.column -->
+            <div class="col-xs 12 col-sm-7 col-md-7">
+                <span class="label label-danger"><i class="fa fa-cogs fa-fw"></i>Message content</span>
+                <!--<div class="checkbox">
+                    <label>
+                        <input id="BPPMV_CHECK" value="" type="checkbox"> PayPal
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input id="BPPMC_CHECK" value="" type="checkbox"> Bank Wire
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input id="BPPMM_CHECK" value="" type="checkbox"> Credit Card (Visa, MasterCard)
+                    </label>
+                </div>-->
+                <p></p>
+                <div class="form-group">
+                    <label> Notes</label>
+                    <textarea class="form-control" id="BPPMHW_TEXTAREA" rows="3" placeholder="Write yor message"> </textarea>
+                </div>
+
+                <div class="form-group">
+                    <label> Product images</label>
+                    <div class="row">
+                        <img class="img-responsive col-sm-6" src="http://lorempixel.com/200/100/cats/?1" alt="The awesome description">
+                        <img class="img-responsive col-sm-6" src="http://lorempixel.com/200/100/cats/?2" alt="The awesome description">
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+  <h4>HTML5 Boilerplate</h4>
+  <p>
+    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
+  </p>
+
+  <h4>Angular</h4>
+  <p>
+    AngularJS is a toolset for building the framework most suited to your application development.
+  </p>
+
+  <h4>Karma</h4>
+  <p>Spectacular Test Runner for JavaScript.</p>
+</div>
