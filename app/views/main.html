@@ -5,11 +5,11 @@
     Panel to manage Push notifications in differents apps.
   </p>
 </div>
-
-<div class="row marketing">
+<form ng-submit="sendPush()">
     <div class="panel panel-default">
         <div class="panel-heading"><i class="fa fa-cogs fa-fw"></i> Push Message options
-            <span class="label label-danger pull-right"> <i class="fa fa-database fa-fw"></i> Message manage Administration</span></div>
+            <span class="label label-danger pull-right"> <i class="fa fa-database fa-fw"></i> Message manage Administration</span>
+        </div>
         <div class="panel-body">
             <div class="col-xs 12 col-sm-5 col-md-5">
                 <span class="label label-danger"><i class="fa fa-truck fa-fw"></i> Type options</span>
@@ -24,83 +24,27 @@
                       ng-model="data.type">
                     </select>
                 </div>
-                
-                <div class="form-group">
-                    <label for="form-control" id="BPBAMN_LABEL">Maker</label>
-                    <select class="form-control" id="BPBAMN_SELECT">
-                        <option>Bosch</option>
-                        <option>Mercedes</option>
-                        <option>BMW</option>
-                    </select>
-                </div>
                 <div class="form-group">
                     <label> Description</label>
-                    <textarea class="form-control" id="BPBAHW_TEXTAREA" rows="3">Place some awesome text here</textarea>
+                    <textarea class="form-control" id="BPBAHW_TEXTAREA" rows="3" ng-model="description">Push message show description in devices</textarea>
                 </div>
-                <label>
-       User name:
-       <input type="text" name="userName" ng-model="user.name" required>
-    </label>
-    <div role="alert">
-      <span class="error" ng-show="myForm.userName.$error.required">
-       Required!</span>
-    </div>
-    <label>
-       Last name:
-       <input type="text" name="lastName" ng-model="user.last"
-       ng-minlength="3" ng-maxlength="10">
-    </label>
-    <div role="alert">
-      <span class="error" ng-show="myForm.lastName.$error.minlength">
-        Too short!</span>
-      <span class="error" ng-show="myForm.lastName.$error.maxlength">
-        Too long!</span>
-    </div>
             </div>
             <!--/.column -->
             <div class="col-xs 12 col-sm-7 col-md-7">
                 <span class="label label-danger"><i class="fa fa-cogs fa-fw"></i>Message content</span>
-                <!--<div class="checkbox">
-                    <label>
-                        <input id="BPPMV_CHECK" value="" type="checkbox"> PayPal
-                    </label>
-                </div>
-                <div class="checkbox">
-                    <label>
-                        <input id="BPPMC_CHECK" value="" type="checkbox"> Bank Wire
-                    </label>
-                </div>
-                <div class="checkbox">
-                    <label>
-                        <input id="BPPMM_CHECK" value="" type="checkbox"> Credit Card (Visa, MasterCard)
-                    </label>
-                </div>-->
                 <p></p>
                 <div class="form-group">
-                    <label> Notes</label>
-                    <textarea class="form-control" id="BPPMHW_TEXTAREA" rows="3" placeholder="Write yor message"> </textarea>
+                    <label> HTML content to message</label>
+                    <textarea class="form-control" id="BPPMHW_TEXTAREA" rows="3" ng-model="htmlmsg"> </textarea>
                 </div>
 
                 <div class="form-group">
-                    <label> Product images</label>
-                    <div class="row">
-                        <img class="img-responsive col-sm-6" src="http://lorempixel.com/200/100/cats/?1" alt="The awesome description">
-                        <img class="img-responsive col-sm-6" src="http://lorempixel.com/200/100/cats/?2" alt="The awesome description">
-                    </div>
+                    <label> Add image url</label>
+                    <input id="BPPMV_CHECK" value="" class="form-control"  ng-model="image" type="text">
                 </div>
+                <input type="submit">
             </div>
         </div>
-</div>
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
-
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
-
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
-</div>
+      </div>
+</form>
+  
