@@ -5,7 +5,7 @@
     Panel to manage Push notifications in differents apps.
   </p>
 </div>
-<form ng-submit="sendPush()">
+<form ng-submit="sendPush(pushform)" novalidadate="" name="pushform" >
     <div class="panel panel-default">
         <div class="panel-heading"><i class="fa fa-cogs fa-fw"></i> Push Message options
             <span class="label label-danger pull-right"> <i class="fa fa-database fa-fw"></i> Message manage Administration</span>
@@ -29,22 +29,43 @@
                     <textarea class="form-control" id="BPBAHW_TEXTAREA" rows="3" ng-model="description">Push message show description in devices</textarea>
                 </div>
             </div>
-            <!--/.column -->
             <div class="col-xs 12 col-sm-7 col-md-7">
-                <span class="label label-danger"><i class="fa fa-cogs fa-fw"></i>Message content</span>
-                <p></p>
-                <div class="form-group">
-                    <label> HTML content to message</label>
-                    <textarea class="form-control" id="BPPMHW_TEXTAREA" rows="3" ng-model="htmlmsg"> </textarea>
-                </div>
+                    <span class="label label-danger"><i class="fa fa-cogs fa-fw"></i>Message content</span>
+                    <p></p>
+                    <div class="form-group">
+                        <label> HTML content to message</label>
+                        <textarea class="form-control" id="BPPMHW_TEXTAREA" rows="3" ng-model="form.htmlmsg[0]"> </textarea>
+                    </div>
 
-                <div class="form-group">
-                    <label> Add image url</label>
-                    <input id="BPPMV_CHECK" value="" class="form-control"  ng-model="image" type="text">
-                </div>
-                <input type="submit">
+                    <div class="form-group">
+                        <label> Add image url</label>
+                        <input id="BPPMV_CHECK" value="" class="form-control"  ng-model="form.image[0]" type="text">
+                    </div>
+                    <button ng-click = "addMessage()">+ Gehitu mezua</button>
+                    
             </div>
+            <div ng-repeat="choice in choices">
+                <div class="col-xs 12 col-sm-5 col-md-5">
+                
+                </div>
+                <div class="col-xs 12 col-sm-7 col-md-7">
+                        <span class="label label-danger"><i class="fa fa-cogs fa-fw"></i>Message content</span>
+                        <p></p>
+                        <div class="form-group">
+                            <label> HTML content to message</label>
+                            <textarea class="form-control" id="BPPMHW_TEXTAREA" rows="3" ng-model="htmlmsg"> </textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label> Add image url</label>
+                            <input id="BPPMV_CHECK" value="" class="form-control"  ng-model="image" type="text">
+                        </div>
+                        <button>+ Gehitu mezua</button>
+                </div>
+            </div>
+            
         </div>
+        <input type="submit">
       </div>
 </form>
   

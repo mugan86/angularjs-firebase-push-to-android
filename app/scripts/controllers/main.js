@@ -15,7 +15,12 @@ angular.module('angularApp')
       'Karma'
     ];
 
+    $scope.addMessage = function()
+    {
+      console.log("Add new messa");
+    };
 
+    $scope.choices = [{id: 1, image: "", htmlmsg: ""}];
     $scope.data = {
     availableOptions: [
 
@@ -30,11 +35,19 @@ angular.module('angularApp')
     $scope.htmlmsg = "";
     $scope.image = "";
 
-    $scope.sendPush = function()
+    $scope.sendPush = function(form)
     {
-    	console.log("Send message");
-    	console.log($scope.image);
-    	console.log($scope.htmlmsg);
-    	console.log($scope.data.type.id);
+      console.log("Send message");
+      if(form.$valid) {
+        if ($scope.form.image[0] != undefined)
+        {
+          console.log($scope.form.image[0]);
+        }
+        
+        console.log($scope.form.htmlmsg[0]);
+        console.log($scope.data.type.id);
+      }
+    	
+      
     };
   });
