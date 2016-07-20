@@ -5,7 +5,7 @@
     Panel to manage Push notifications in differents apps.
   </p>
 </div>
-<form ng-submit="sendPush(pushform)" novalidadate="" name="pushform" >
+<form ng-submit="sendPush()" novalidadate="">
     <div class="panel panel-default">
         <div class="panel-heading"><i class="fa fa-cogs fa-fw"></i> Push Message options <b> ({{choices.length}} / 5)</b>
             <span class="label label-danger pull-right"> <i class="fa fa-database fa-fw"></i> Message manage Administration</span>
@@ -56,8 +56,6 @@
                     </div>
                 </div>
             </div>
-             
-            
         </div>
       </div>
 </form>
