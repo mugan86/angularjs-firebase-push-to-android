@@ -7,7 +7,7 @@
 </div>
 <form ng-submit="sendPush(pushform)" novalidadate="" name="pushform" >
     <div class="panel panel-default">
-        <div class="panel-heading"><i class="fa fa-cogs fa-fw"></i> Push Message options
+        <div class="panel-heading"><i class="fa fa-cogs fa-fw"></i> Push Message options <b> ({{choices.length}} / 5)</b>
             <span class="label label-danger pull-right"> <i class="fa fa-database fa-fw"></i> Message manage Administration</span>
         </div>
         <div class="panel-body">
@@ -26,7 +26,7 @@
                 </div>
                 <div class="form-group">
                     <label> Description</label>
-                    <textarea class="form-control" id="BPBAHW_TEXTAREA" rows="3" ng-model="description">Push message show description in devices</textarea>
+                    <textarea class="form-control" id="BPBAHW_TEXTAREA" rows="3" ng-model="description" placeholder="Insert notification content description that show in device">Push message show description in devices</textarea>
                 </div>
             </div>
             <div ng-repeat="choice in choices">
@@ -38,12 +38,13 @@
                         <p></p>
                         <div class="form-group">
                             <label> HTML content to message</label>
-                            <textarea class="form-control" id="BPPMHW_TEXTAREA" rows="3" ng-model="choice.htmlmsg"> </textarea>
+                            <textarea class="form-control" id="BPPMHW_TEXTAREA" rows="3" ng-model="choice.htmlmsg" placeholder="Insert HTML text with links and content. For example: <h1>Hello Push message</h1> <p>Test</p>"> </textarea>
                         </div>
 
                         <div class="form-group">
                             <label> Add image url</label>
-                            <input id="BPPMV_CHECK" value="" class="form-control"  ng-model="choice.image" type="text">
+                            <input id="BPPMV_CHECK" value="" class="form-control"  ng-model="choice.image" type="text"
+                            placeholder="Insert image url. For example: http://i.telegraph.co.uk/multimedia/archive/03598/lightning-10_3598416k.jpg">
                         </div>
                 </div>
             </div>
