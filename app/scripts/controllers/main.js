@@ -85,36 +85,20 @@ angular.module('angularApp')
         'description': $scope.description,
         'messages': $scope.choices
       };
-      console.log(angular.toJson($scope.formData));
 
-      console.log({user:$scope.formData});
-      /*$http.post('http://192.168.110.131:8888/push/receive_data.php', {data:$scope.formData}).success(
-        function(data){
-          $scope.response = data;
-          console.log($scope.response);
-      }).error(function()
-          {
-            console.log('Error');
-             
-          })
-          .then(function() {
+      //Prepare send data (params)
+      
+      var data = $.param({'type': $scope.data.type.id,
+                          'description': $scope.description,
+                          'messages': angular.toJson($scope.choices)});        
+      var config = {headers : {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'}} 
 
-            console.log("correct");
-
-        });*/
-
-        var data = $.param({'type': $scope.data.type.id,
-                            'description': $scope.description,
-                            'messages': angular.toJson($scope.choices),
-                            'test': "ddddd"});        
-        var config = {headers : {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'}} 
-
-        $http.post("http://192.168.110.131:8888/push/receive_data.php",data,config)
-        .success(function(response) {
-            $scope.data = response;
-            console.log($scope.data);
-            $scope.startSelectValues();
-        });
+      $http.post("http://192.168.110.131:8888/push/receive_data.php",data,config)
+      .success(function(response) {
+          $scope.data = response;
+          console.log($scope.data);
+          $scope.startSelectValues();
+      });
 
 
 
