@@ -29,43 +29,35 @@
                     <textarea class="form-control" id="BPBAHW_TEXTAREA" rows="3" ng-model="description">Push message show description in devices</textarea>
                 </div>
             </div>
-            <div class="col-xs 12 col-sm-7 col-md-7">
-                    <span class="label label-danger"><i class="fa fa-cogs fa-fw"></i>Message content</span>
-                    <p></p>
-                    <div class="form-group">
-                        <label> HTML content to message</label>
-                        <textarea class="form-control" id="BPPMHW_TEXTAREA" rows="3" ng-model="form.htmlmsg[0]"> </textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <label> Add image url</label>
-                        <input id="BPPMV_CHECK" value="" class="form-control"  ng-model="form.image[0]" type="text">
-                    </div>
-                    <button ng-click = "addMessage()">+ Gehitu mezua</button>
-                    
-            </div>
             <div ng-repeat="choice in choices">
                 <div class="col-xs 12 col-sm-5 col-md-5">
                 
                 </div>
                 <div class="col-xs 12 col-sm-7 col-md-7">
-                        <span class="label label-danger"><i class="fa fa-cogs fa-fw"></i>Message content</span>
+                        <span class="label label-danger"><i class="fa fa-cogs fa-fw"></i>Message content #{{$index + 1}}</span>
                         <p></p>
                         <div class="form-group">
                             <label> HTML content to message</label>
-                            <textarea class="form-control" id="BPPMHW_TEXTAREA" rows="3" ng-model="htmlmsg"> </textarea>
+                            <textarea class="form-control" id="BPPMHW_TEXTAREA" rows="3" ng-model="choice.htmlmsg"> </textarea>
                         </div>
 
                         <div class="form-group">
                             <label> Add image url</label>
-                            <input id="BPPMV_CHECK" value="" class="form-control"  ng-model="image" type="text">
+                            <input id="BPPMV_CHECK" value="" class="form-control"  ng-model="choice.image" type="text">
                         </div>
-                        <button>+ Gehitu mezua</button>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="text-right">
+                        <button ng-show="remove" type="button" class="btn btn-default" ng-click = "$event.preventDefault(); $event.stopPropagation();removeMessage()">- Kendu mezua</button>
+                        <button ng-show="add" type="button" class="btn btn-default" ng-click = "$event.preventDefault(); $event.stopPropagation();addMessage()">+ Gehitu mezua</button> <input type="submit" class="btn btn-default">
+                    </div>
+                </div>
+            </div>
+             
             
         </div>
-        <input type="submit">
       </div>
 </form>
   
