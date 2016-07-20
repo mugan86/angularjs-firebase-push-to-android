@@ -66,7 +66,7 @@ angular.module('angularApp')
           };
     };
 
-    $scope.sendPush = function(form)
+    $scope.sendPush = function()
     {
       console.log("Send message");
 
@@ -77,6 +77,11 @@ angular.module('angularApp')
 
       console.log($scope.data.type.id);
       console.log($scope.description);
+
+      if ($scope.description == "")
+      {
+        $scope.description = "New message receive with update content";
+      }
       //$scope.content = 
       console.log(angular.toJson($scope.choices));
 
