@@ -60,9 +60,9 @@ angular.module('angularApp')
             {id: '1', name: 'Sports'},
             {id: '2', name: 'Economy'},
             {id: '3', name: 'Technology'},
-            {id: '4', name: 'All users'}
+            {id: '200', name: 'All users'}
           ],
-          type: {id: '4', name: 'All users'} //This sets the default value of the select in the ui
+          type: {id: '200', name: 'All users'} //This sets the default value of the select in the ui
           };
     };
 
@@ -100,9 +100,6 @@ angular.module('angularApp')
           $scope.startSelectValues();
       });
 
-
-
-      
     };
 
     $scope.startSelectValues();
