@@ -8,7 +8,7 @@
  * Controller of the angularApp
  */
 angular.module('angularApp')
-  .controller('MainCtrl', function ($scope, $http) {
+  .controller('MainCtrl', function ($scope, $http, LOCAL_PUSH_SERVER_URL_LOCALHOST) {
     
     //Initialize add/remove messages buttons
     $scope.remove = false;
@@ -77,6 +77,7 @@ angular.module('angularApp')
 
       console.log($scope.data.type.id);
       console.log($scope.description);
+      console.log($scope.title);
 
       if ($scope.description == "")
       {
@@ -85,20 +86,15 @@ angular.module('angularApp')
       //$scope.content = 
       console.log(angular.toJson($scope.choices));
 
-      $scope.formData = {
-        'type': $scope.data.type.id,
-        'description': $scope.description,
-        'messages': $scope.choices
-      };
-
       //Prepare send data (params)
       
       var data = $.param({'type': $scope.data.type.id,
                           'description': $scope.description,
+                          'title': $scope.title,
                           'messages': angular.toJson($scope.choices)});        
       var config = {headers : {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'}} 
 
-      $http.post("http://192.168.110.131:8888/push/receive_data.php",data,config)
+      $http.post(LOCAL_PUSH_SERVER_URL_LOCALHOST,data,config)
       .success(function(response) {
           $scope.data = response;
           console.log($scope.data);
