@@ -37,7 +37,7 @@
     
 	$fields = array(
 		'registration_ids' => $ids,
-        'data' => array('message' => $description, 'news'=>$messages_to_send, 'action' => 1, 'desc_msg' => 'Notification Example', 'type' => $type)
+        'data' => array('message' => $description, 'news'=>$messages_to_send, 'action' => 1, 'desc_msg' => 'Notification Example', 'type' => $type, 'title'=>$title)
     );
 
     $headers = array(

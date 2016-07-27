@@ -9,6 +9,7 @@
   
   $type = $_POST["type"];
   $description = $_POST["description"];
+  $title = $_POST['title'];
   $messages = json_decode($_POST["messages"]);
 
   if (sizeof($messages) > 0)
