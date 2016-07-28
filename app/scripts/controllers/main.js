@@ -57,9 +57,10 @@ angular.module('angularApp')
         $scope.data = {
         availableOptions: [
 
-            {id: '1', name: 'Sports'},
-            {id: '2', name: 'Economy'},
-            {id: '3', name: 'Technology'},
+            {id: '1', name: 'Blog'},
+            {id: '2', name: 'Apps'},
+            {id: '3', name: 'Webs'},
+            {id: '4', name: 'Events'},
             {id: '200', name: 'All users'}
           ],
           type: {id: '200', name: 'All users'} //This sets the default value of the select in the ui
