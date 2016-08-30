@@ -17,6 +17,14 @@ Google's project to add a step to send notifications (or other services).
 
 https://console.firebase.google.com/?pli=1
 
+Show Notifications API KEY in Firebase:
+
+1. Select project.
+2. Click in "Settings" (icon) - Locate in up-left part.
+3. Project configuration.
+4. Select "Cloud Messaging" tab.
+5. Copy Server key that looks like this "AIzaSyBHlndxnzF9xFJ..." (not original, only to show)
+
 Select the existing project (if you have created, otherwise we will have to create a) and "Add firebase". 
 
 ### Adding Firebase Our Google Account
