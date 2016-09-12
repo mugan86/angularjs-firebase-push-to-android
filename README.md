@@ -50,3 +50,6 @@ We are home page, "Add application" take the opportunity, in order to add to our
 
 ### Add firebase in our Android project:
  - All necesary steps in: https://firebase.google.com/docs/android/setup
+
+
+ [[https://github.com/mugan86/angularjs-firebase-push-to-android/blob/master/screens/start.png|alt=start]]
