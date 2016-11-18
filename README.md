@@ -64,3 +64,7 @@ We are home page, "Add application" take the opportunity, in order to add to our
 
 **Message success send!!**
  ![](https://raw.githubusercontent.com/mugan86/angularjs-firebase-push-to-android/master/screens/start.png)
+
+ **Replace value API KEY with FCM Token value**
+
+ ![](https://raw.githubusercontent.com/mugan86/angularjs-firebase-push-to-android/master/screens/value_change_in_fcm.png)
