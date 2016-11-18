@@ -6,9 +6,9 @@
 	
 	$path_to_firebase_cm = 'https://fcm.googleapis.com/fcm/send';
 
-	//API-aren giltza(KEY) Googlen lortutakoa izan da nere kontuarekin
+	//API Key(KEY) obtain in Firebase Console (!!!!Replace with Firebase Cloud Messaging Token!!!! instead API KEY)
 	//https://console.firebase.google.com/project/<your_project_id>/settings/cloudmessaging
-	$apiKey='<YOUR_API_KEY_REPLACE>';
+	$apiKey='<YOUR_FIREBASE_CLOUD MESSAGING TOKEN_VALUE_REPLACE>';
 
 	$ids = array();
 
