@@ -31,8 +31,7 @@
 
     //Add all messages receive by Backend Push notifications panel
     foreach ($messages as $message) {
-        //echo "//****Valor: " . $message->id . "\n";
-        array_push($messages_to_send, array("html"=>$message->htmlmsg, "img"=>$message->image));
+        array_push($messages_to_send, array("html"=>$message->htmlmsg, "img"=>$message->image, "source"=>$message->source, "app_message"=>$message->app_message));
     }
     
 	$fields = array(
