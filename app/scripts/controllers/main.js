@@ -13,12 +13,14 @@ angular.module('angularApp')
     //Initialize add/remove messages buttons
     $scope.remove = false;
     $scope.add = true;
+    $scope.validation = true;
 
     $scope.description = "";
+    $scope.title = "";
 
     $scope.addMessage = function()
     {
-      $scope.choices.push({id: $scope.choices.length+1, image: "", htmlmsg: ""});
+      $scope.choices.push({id: $scope.choices.length+1, image: "", htmlmsg: "", source:""});
       $scope.remove = true;
       if ($scope.choices.length == 5)
       {
@@ -46,7 +48,7 @@ angular.module('angularApp')
       }
     };
 
-    $scope.choices = [{id: 1, image: "", htmlmsg: ""}];
+    $scope.choices = [{id: 1, image: "", htmlmsg: "", source:""}];
     
 
     $scope.htmlmsg = "";
@@ -73,34 +75,50 @@ angular.module('angularApp')
 
       for (var i = 0; i < $scope.choices.length; i++)
       {
-        console.log($scope.choices[i].id + " / " + $scope.choices[i].image + " / " + $scope.choices[i].htmlmsg);
+        console.log($scope.choices[i].id + " / " + $scope.choices[i].image + " / " + $scope.choices[i].htmlmsg + " / " + $scope.choices[i].source);
       }
 
       console.log($scope.data.type.id);
       console.log($scope.description);
       console.log($scope.title);
 
+      
       if ($scope.description == "")
       {
         $scope.description = "New message receive with update content";
+        $scope.validation = false;
+      }
+      if($scope.title == "")
+      {
+        $scope.title = "Title required!!";
+        $scope.validation = false;
+      }
+
+      if ($scope.choices[0].htmlmsg == "" || $scope.choices[0] == "")
+      {
+        alert("Complete first message correctly!!!");
+        $scope.validation = false;
       }
       //$scope.content = 
       console.log(angular.toJson($scope.choices));
 
       //Prepare send data (params)
-      
-      var data = $.param({'type': $scope.data.type.id,
+      if ($scope.validation)
+      {
+          var data = $.param({'type': $scope.data.type.id,
                           'description': $scope.description,
                           'title': $scope.title,
                           'messages': angular.toJson($scope.choices)});        
-      var config = {headers : {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'}} 
+          var config = {headers : {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'}} 
 
-      $http.post(LOCAL_PUSH_SERVER_URL_LOCALHOST,data,config)
-      .success(function(response) {
-          $scope.data = response;
-          console.log($scope.data);
-          $scope.startSelectValues();
-      });
+          $http.post(LOCAL_PUSH_SERVER_URL_LOCALHOST,data,config)
+          .success(function(response) {
+              $scope.data = response;
+              console.log($scope.data);
+              $scope.startSelectValues();
+          });
+      }
+     
 
     };
 
