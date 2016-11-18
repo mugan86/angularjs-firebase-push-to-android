@@ -51,5 +51,16 @@ We are home page, "Add application" take the opportunity, in order to add to our
 ### Add firebase in our Android project:
  - All necesary steps in: https://firebase.google.com/docs/android/setup
 
+### Firebase Cloud Messaging Screens server(FCM):
 
+**Start Panel**
+ ![](https://raw.githubusercontent.com/mugan86/angularjs-firebase-push-to-android/master/screens/start.png)
+
+ **New Message**
+ ![](https://raw.githubusercontent.com/mugan86/angularjs-firebase-push-to-android/master/screens/add_new_message.png)
+
+ **5 messages limit!!**
+ ![](https://raw.githubusercontent.com/mugan86/angularjs-firebase-push-to-android/master/screens/limit_message.png)
+
+**Message success send!!**
  ![](https://raw.githubusercontent.com/mugan86/angularjs-firebase-push-to-android/master/screens/start.png)
