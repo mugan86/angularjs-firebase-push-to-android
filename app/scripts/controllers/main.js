@@ -14,13 +14,14 @@ angular.module('angularApp')
     $scope.remove = false;
     $scope.add = true;
     $scope.validation = true;
+    $scope.success = false;
 
     $scope.description = "";
     $scope.title = "";
 
     $scope.addMessage = function()
     {
-      $scope.choices.push({id: $scope.choices.length+1, image: "", htmlmsg: "", source:""});
+      $scope.choices.push({id: $scope.choices.length+1, image: "", htmlmsg: "", source:"", app_message: "" + Math.floor(Math.random() * 2)});
       $scope.remove = true;
       if ($scope.choices.length == 5)
       {
@@ -48,7 +49,7 @@ angular.module('angularApp')
       }
     };
 
-    $scope.choices = [{id: 1, image: "", htmlmsg: "", source:""}];
+    $scope.choices = [{id: 1, image: "", htmlmsg: "", source:"", app_message: "" + Math.floor(Math.random() * 2)}];
     
 
     $scope.htmlmsg = "";
@@ -75,7 +76,7 @@ angular.module('angularApp')
 
       for (var i = 0; i < $scope.choices.length; i++)
       {
-        console.log($scope.choices[i].id + " / " + $scope.choices[i].image + " / " + $scope.choices[i].htmlmsg + " / " + $scope.choices[i].source);
+        console.log($scope.choices[i].id + " / " + $scope.choices[i].image + " / " + $scope.choices[i].htmlmsg + " / " + $scope.choices[i].source + " / " + $scope.choices[i].app_message);
       }
 
       console.log($scope.data.type.id);
@@ -116,6 +117,8 @@ angular.module('angularApp')
               $scope.data = response;
               console.log($scope.data);
               $scope.startSelectValues();
+              console.log("success");
+              $scope.success = true;
           });
       }
      
